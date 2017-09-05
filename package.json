@@ -1,0 +1,5 @@
+{
+  "name": "benchmark-headless-chrome-vs-phantomjs",
+  "private": true,
+  "dependencies": {}
+}
