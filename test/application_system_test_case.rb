@@ -1,5 +1,14 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
+  case ENV['BROWSER']
+  when 'headless_chrome'
+    puts "Using selenium_chrome_headless..."
+    puts
+    driven_by :selenium_chrome_headless
+  else
+    puts "Using poltergeist..."
+    puts
+    driven_by :poltergeist
+  end
 end
